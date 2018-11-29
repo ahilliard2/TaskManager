@@ -3,8 +3,9 @@
 @{
     ViewBag.Title = "Task Manager Login";
 }
-@*<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>*@
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
 
 <h2>Task Manager</h2>
 @using (@Html.BeginForm(null, null, FormMethod.Post, new { @class = "login-form" }))
@@ -23,7 +24,9 @@
                 @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.TextBoxFor(m => m.UserName, 
-                   new { @class = "login-input", placeholder = "user name", @data_val = "true", @data_val_required = "Username is a required field" })
+                            new { @class = "login-input", placeholder = "user name", @data_val = "true"})
+                    
+                   
                     @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                 </div>
             </div>

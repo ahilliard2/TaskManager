@@ -102,7 +102,7 @@ namespace TaskManager.Controllers
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            }            
             Task task = db.Task.Find(id);
             if (task == null)
             {
@@ -119,7 +119,7 @@ namespace TaskManager.Controllers
             Task task = db.Task.Find(id);
             db.Task.Remove(task);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new {id = Convert.ToInt32(System.Web.HttpContext.Current.Session["userId"])});
         }
 
         protected override void Dispose(bool disposing)
