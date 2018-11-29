@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TaskManager.Models.Task>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+<p>
+    @Html.ActionLink("Create Task", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th style="display:none">
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>   
+        <th>
+            @Html.DisplayNameFor(model => model.TaskId)
+        </th>    
+        <th>
+            @Html.DisplayNameFor(model => model.TaskDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastUpdated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Complete)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td style="display:none">
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaskId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaskDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastUpdated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Complete)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.TaskId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.TaskId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.TaskId })
+        </td>
+    </tr>
+
+}
+   
+</table>
+
+}
+
+
