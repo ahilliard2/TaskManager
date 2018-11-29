@@ -8,6 +8,7 @@ namespace TaskManager.Util
 {
     public static class SimpleEncryption
     {
+        //Method to decrypt a string passed in
         public static string EncryptDecrypt(string szPlainText, int szEncryptionKey)
         {
             StringBuilder szInputStringBuild = new StringBuilder(szPlainText);

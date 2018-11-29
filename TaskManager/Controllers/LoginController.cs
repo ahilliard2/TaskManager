@@ -45,6 +45,7 @@ namespace TaskManager.Controllers
             return View(userr);         
          }
 
+        //Checks to see if a user exists in the database and passwords match
         [NonAction]
         private User ValidateUser(string userName, string password)
         {
